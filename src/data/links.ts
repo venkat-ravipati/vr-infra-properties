@@ -41,10 +41,10 @@ export const projectLinks = [
 ];
 
 export const footerLinks = {
-  company: [
+  quickLinks: [
     {
-      label: "About Us",
-      href: "/about",
+      label: "Home",
+      href: "/",
     },
     {
       label: "Projects",
@@ -55,26 +55,11 @@ export const footerLinks = {
       href: "/services",
     },
     {
-      label: "Contact Us",
-      href: "/contact",
-    },
-  ],
-
-  quickLinks: [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "About",
+      label: "About Us",
       href: "/about",
     },
     {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Contact",
+      label: "Contact Us",
       href: "/contact",
     },
   ],

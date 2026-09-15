@@ -1,3 +1,6 @@
+import { House, MapPinned, HardHat, TrendingUp } from "lucide-react";
+
+
 export const companyInfo = {
     logo: "VR",
     name: "VR Infra Properties",
@@ -42,34 +45,41 @@ export const services = {
     title: "What We Offer",
 
     description:
-        "We specialize in selling residential plots that give you the freedom to build your villa the way you want.",
+        "We offer thoughtfully selected residential plots in promising locations, giving you the freedom to build your dream home or make a smart long-term investment.",
 
     items: [
         {
             title: "Villa Plots",
             description:
-                "Premium residential plots suitable for building your dream villa.",
+                "Spacious residential plots ideal for building your dream villa in a peaceful and well-planned community.",
+            icon: House,
+        },
+        {
+            title: "Residential Plots",
+            description:
+                "Well-positioned plots designed for families looking to build a comfortable and modern home.",
+            icon: MapPinned,
         },
         {
             title: "Ready-to-Build Plots",
             description:
-                "Plots available for customers who are ready to plan and build their own home.",
+                "Plots that are ready for you to start planning and building your home according to your vision.",
+            icon: HardHat,
         },
         {
-            title: "Residential Land",
+            title: "Investment Plots",
             description:
-                "Well-located residential land for families looking for a place to build their future home.",
-        },
-        {
-            title: "Land Investment",
-            description:
-                "Residential plots suitable for long-term property investment.",
+                "Residential plots offering an opportunity for long-term property investment and future growth.",
+            icon: TrendingUp,
         },
     ],
 };
 
+
 export const process = {
     title: "How It Works",
+    
+    description:"A simple and transparent process to help you find and purchase the right villa plot.",
 
     steps: [
         {
