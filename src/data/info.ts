@@ -29,16 +29,42 @@ export const companyInfo = {
 export const about = {
     title: "About VR Infra Properties",
 
-    heading: "Find the Perfect Plot for Your Dream Villa",
+    heading: "The Right Plot for Your Dream Villa",
 
     description:
-        "VR Infra Properties helps families and investors find and purchase premium residential plots suitable for building their dream villas. We focus on offering well-located, ready-to-build villa plots and providing customers with a transparent and reliable land-buying experience.",
+        "VR Infra Properties specializes in selling premium residential villa plots in well-planned locations. We help families and investors find the right plot to build their dream home or make a long-term property investment.",
 
     mission:
-        "To make quality residential land accessible to families and investors looking for the perfect place to build their dream villa.",
+        "To provide quality residential plots with a simple, transparent, and reliable buying experience.",
 
     vision:
-        "To become a trusted name in residential plot sales by offering quality properties, promising locations, and a transparent buying experience.",
+        "To become a trusted name in residential plot sales by offering well-located properties and putting our customers first.",
+    values: {
+    title: "What We Stand For",
+
+    items: [
+        {
+            title: "Transparency",
+            description:
+                "Clear communication and straightforward property dealings.",
+        },
+        {
+            title: "Quality",
+            description:
+                "A focus on offering residential plots in promising locations.",
+        },
+        {
+            title: "Trust",
+            description:
+                "Building lasting relationships with our customers.",
+        },
+        {
+            title: "Customer First",
+            description:
+                "Helping customers find a plot that suits their needs and goals.",
+        },
+    ],
+},
 };
 
 export const services = {
@@ -78,8 +104,8 @@ export const services = {
 
 export const process = {
     title: "How It Works",
-    
-    description:"A simple and transparent process to help you find and purchase the right villa plot.",
+
+    description: "A simple and transparent process to help you find and purchase the right villa plot.",
 
     steps: [
         {

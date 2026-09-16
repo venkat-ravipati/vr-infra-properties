@@ -9,8 +9,10 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
     return (
         <Link to={`/projects/${project.slug}`}>
-            <div className="relative w-full h-full overflow-hidden duration-300">
-                <img src={project.mainImage} alt={project.title} loading="lazy" className="w-full h-110 object-cover" />
+            <div className="relative w-full h-full group overflow-hidden duration-300">
+                <div className="h-110 overflow-hidden relative">
+                    <img src={project.mainImage} alt={project.title} loading="lazy" className="w-full h-full absolute object-cover group-hover:scale-110 transition-transform duration-300" />
+                </div>
                 <div className="text-2xl md:text-3xl font-medium tracking-wide mt-4">{project.title}</div>
                 <div className="text-lg mt-2">{project.location}</div>
                 <div className="flex justify-start items-center gap-2 mt-2">

@@ -69,8 +69,8 @@ export default function Home() {
         gsap.from(".about-button", {
             opacity: 0,
             y: 20,
-            duration: 0.6,
-            delay: 0.5,
+            duration: 1,
+            delay:1,
             scrollTrigger: {
                 trigger: ".about-button",
                 start: "top 80%",
@@ -107,8 +107,8 @@ export default function Home() {
         gsap.from(".services-button", {
             opacity: 0,
             y: 20,
-            duration: 0.6,
-            delay: 0.5,
+            duration: 1,
+            delay:0.2,
             scrollTrigger: {
                 trigger: ".services-button",
                 start: "top 80%",
@@ -130,7 +130,7 @@ export default function Home() {
         gsap.from(".project-button", {
             opacity: 0,
             y: 20,
-            duration: 0.6,
+            duration: 1,
             scrollTrigger: {
                 trigger: ".project-button",
                 start: "top 90%"
@@ -140,29 +140,29 @@ export default function Home() {
     }, { scope: projectRef })
 
     useGSAP(() => {
-        const splitContactText = new SplitText(".contact-text", {type : "lines"});
+        const splitContactText = new SplitText(".contact-text", { type: "lines" });
 
         gsap.from(splitContactText.lines, {
             opacity: 0,
-            y:100,
+            y: 100,
             duration: 1,
             stagger: 0.1,
             scrollTrigger: {
-                trigger:".contact-text",
+                trigger: ".contact-text",
                 start: "top 80%"
             }
         })
         gsap.from(".contact-button", {
             opacity: 0,
             y: 20,
-            duration:1,
-            scrollTrigger:{
+            duration: 1,
+            scrollTrigger: {
                 trigger: ".contact-button",
                 start: "top 80%"
             }
 
         })
-    }, {scope: contactRef })
+    }, { scope: contactRef })
 
 
     return (
@@ -174,10 +174,11 @@ export default function Home() {
                     <div className="hero-tagline whitespace-pre-line lg:whitespace-normal md:text-2xl lg:text-3xl font-medium text-orange md:px-2 mt-10 md:mt-4">
                         {companyInfo.tagline.replace(".", ".\n")}
                     </div>
-
-                    <button className="bg-orange hero-explore text-sm md:text-base font-medium cursor-pointer text-white px-4 md:px-6 py-2 mt-6 rounded-3xl hover:bg-black transition-colors duration-300" onClick={() => navigate("/projects")}>
-                        Explore Projects
-                    </button>
+                    <div className="hero-explore">
+                        <button className="bg-orange text-sm md:text-base font-medium cursor-pointer text-white px-4 md:px-6 py-2 mt-6 rounded-3xl hover:bg-black transition-colors duration-300" onClick={() => navigate("/projects")}>
+                            Explore Projects
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -190,9 +191,11 @@ export default function Home() {
                     <div className="mt-6 text-lg about-description md:text-xl md:pr-15 lg:pr-30 xl:pr-50 text-gray-600">
                         {about.description}
                     </div>
-                    <button className="bg-orange about-button text-sm md:text-base flex items-center gap-2 hover:gap-4 transition-all font-medium cursor-pointer text-white px-4 md:px-6 py-2 mt-6 hover:bg-black duration-300" onClick={() => navigate("/about")}>
-                        More About Us <ArrowRight className="inline-block" size={20} />
-                    </button>
+                    <div className="about-button">
+                        <button className="bg-orange text-sm md:text-base flex items-center gap-2 hover:gap-4 transition-all font-medium cursor-pointer text-white px-4 md:px-6 py-2 mt-6 hover:bg-black duration-300" onClick={() => navigate("/about")}>
+                            More About Us <ArrowRight className="inline-block" size={20} />
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -202,9 +205,11 @@ export default function Home() {
                     <div className="mt-6 text-2xl services-description md:text-3xl lg:text-4xl text-black">
                         {services.description}
                     </div>
-                    <button className="bg-orange services-button text-sm md:text-base flex items-center gap-2 hover:gap-4 transition-all font-medium cursor-pointer text-white px-4 py-2 mt-6 hover:bg-black duration-300" onClick={() => navigate("/services")}>
-                        More About Services <ArrowRight className="inline-block" size={20} />
-                    </button>
+                    <div className="services-button">
+                        <button className="bg-orange text-sm md:text-base flex items-center gap-2 hover:gap-4 transition-all font-medium cursor-pointer text-white px-4 py-2 mt-6 hover:bg-black duration-300" onClick={() => navigate("/services")}>
+                            More About Services <ArrowRight className="inline-block" size={20} />
+                        </button>
+                    </div>
                 </div>
                 <div className="col-span-1 h-full py-8 md:py-6 md:pl-10 grid grid-cols-2 gap-5">
                     {services.items.map((service, index) => (
@@ -228,9 +233,11 @@ export default function Home() {
                     ))}
                 </div>
 
-                <button onClick={() => navigate("/projects")} className="project-button m-auto flex mt-6 bg-orange items-center gap-2 hover:gap-4 transition-all duration-300 text-white cursor-pointer hover:bg-black py-2 px-4">
-                    View All Projects <ArrowRight size={18} />
-                </button>
+                <div className="project-button">
+                    <button onClick={() => navigate("/projects")} className=" m-auto flex mt-6 bg-orange items-center gap-2 hover:gap-4 transition-all duration-300 text-white cursor-pointer hover:bg-black py-2 px-4">
+                        View All Projects <ArrowRight size={18} />
+                    </button>
+                </div>
             </div>
 
             <div ref={contactRef} className="px-6 md:px-10 py-5 mt-5 text-black bg-orange/80 md:py-10">
@@ -239,7 +246,9 @@ export default function Home() {
                     Your real estate needs<br />
                     we are happy to advise you.
                 </div>
-                <button className="contact-button px-4 py-3 bg-black/90 mt-5 text-orange font-medium flex items-center gap-2 hover:gap-5 transition-all duration-300 cursor-pointer" onClick={() => navigate("/contact")}>Contact Us <ArrowRight size={18} /></button>
+                <div className="contact-button">
+                    <button className="px-4 py-3 bg-black/90 mt-5 text-orange font-medium flex items-center gap-2 hover:gap-5 transition-all duration-300 cursor-pointer" onClick={() => navigate("/contact")}>Contact Us <ArrowRight size={18} /></button>
+                </div>
             </div>
         </div>
     )

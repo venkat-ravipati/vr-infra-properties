@@ -9,12 +9,30 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Services() {
     const servicesRef = useRef(null);
     const processRef = useRef(null);
+    const servicesStartRef = useRef(null);
 
     useGSAP(() => {
-        gsap.from(".services-desc", {
+        gsap.from(".services-img", {
+            scale: 1.1,
+            duration: 1,
+        })
+        gsap.from(".services-text", {
+            opacity:0,
+            y:50,
+            duration: 1,
+        })
+    }, {scope: servicesStartRef})
+
+    useGSAP(() => {
+        gsap.from(".services", {
             opacity: 0,
             y: 50,
             duration: 1,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: ".services",
+                start: "top 90%"
+            }
         });
         gsap.from(".services-points", {
             opacity: 0,
@@ -29,13 +47,13 @@ export default function Services() {
     }, { scope: servicesRef })
 
     useGSAP(() => {
-        gsap.from(".process-desc", {
+        gsap.from(".process", {
             opacity: 0,
             y: 50,
             duration: 1,
             stagger: 0.1,
             scrollTrigger: {
-                trigger: ".process-points",
+                trigger: ".process",
                 start: "top 80%"
             }
         });
@@ -53,24 +71,24 @@ export default function Services() {
 
     return (
         <div>
-            <div className="h-130 relative">
-                <img src="https://res.cloudinary.com/ivenkatravipati/image/upload/v1789483922/Services.webp" loading="lazy" className="absolute h-full w-full object-cover object-top" alt="services image" />
+            <div ref={servicesStartRef} className="h-100 md:h-130 relative">
+                <img src="https://res.cloudinary.com/ivenkatravipati/image/upload/v1789483922/Services.webp" loading="lazy" className="absolute h-full w-full services-img object-cover object-top" alt="services image" />
                 <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute flex items-end justify-center text-6xl lg:text-[200px] inset-0 text-white">
+                <div className="absolute flex services-text items-end justify-center text-6xl lg:text-[200px] inset-0 text-white">
                     Services
                 </div>
             </div>
             <div ref={servicesRef} className="px-6 md:px-10">
                 <div className="grid md:grid-cols-3 gap-5 mt-8 md:mt-10">
-                    <div className="col-span-1 text-xl md:text-2xl">
+                    <div className="col-span-1 text-xl md:text-2xl services">
                         Services
                     </div>
-                    <div className="col-span-2 services-desc font-sans text-2xl lg:text-4xl lg:pr-20">
+                    <div className="col-span-2 services font-sans text-2xl lg:text-4xl lg:pr-20">
                         {services.description}
                     </div>
                 </div>
                 <div className="p-10 my-5 bg-[#f5f5f5] grid md:grid-cols-3 lg:grid-cols-2 gap-5 mt-10">
-                    <div className="col-span-1 text-2xl lg:text-3xl">
+                    <div className="col-span-1 text-2xl lg:text-3xl services-points">
                         <div className="sticky top-15">{services.title}</div>
                     </div>
                     <div className="col-span-1 md:col-span-2 lg:col-span-1">
@@ -92,15 +110,15 @@ export default function Services() {
             </div>
             <div ref={processRef} className="px-6 md:px-10">
                 <div className="grid md:grid-cols-3 py-5 gap-5 mt-8 md:mt-10">
-                    <div className="col-span-1 text-xl md:text-2xl">
+                    <div className="col-span-1 text-xl md:text-2xl process">
                         Process
                     </div>
-                    <div className="col-span-2 process-desc font-sans text-2xl lg:text-4xl lg:pr-20">
+                    <div className="col-span-2 process font-sans text-2xl lg:text-4xl lg:pr-20">
                         {process.description}
                     </div>
                 </div>
                 <div className="p-10 my-5 bg-[#f5f5f5] grid md:grid-cols-3 lg:grid-cols-2 gap-5 mt-10">
-                    <div className="col-span-1 text-2xl lg:text-3xl">
+                    <div className="col-span-1 text-2xl lg:text-3xl process-points">
                         <div className="sticky top-15">{process.title}</div>
                     </div>
                     <div className="col-span-1 md:col-span-2 lg:col-span-1">

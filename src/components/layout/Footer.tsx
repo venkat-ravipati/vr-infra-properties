@@ -44,7 +44,7 @@ export default function Footer() {
                 </div>
                 <div className="text-white justify-between pb-3 text-sm flex mt-15 px-5 text-sans">
                     <div>&copy; {year} {companyInfo.name}</div>
-                    <a className="cursor-pointer" target="_blank">code by Venkat</a>
+                    <a className="cursor-pointer" href="https://www.linkedin.com/in/venkat-ravipati" target="_blank" rel="noopener noreferrer">code by Venkat</a>
                 </div>
             </div>
         </div>
