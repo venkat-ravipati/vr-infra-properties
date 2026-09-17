@@ -23,7 +23,7 @@ export default function Navbar(){
     }, { scope: menuRef , dependencies: [isMenuOpen] });
 
     return(
-        <div className="navbar font-sans flex items-center justify-between md:px-10 lg:px-15 xl:px-30 2xl:px-35 py-4 fixed top-0 left-0 right-0 z-50">
+        <div className="navbar backdrop-blur-xs font-sans flex items-center justify-between md:px-10 lg:px-15 xl:px-30 2xl:px-35 py-4 fixed top-0 left-0 right-0 z-50">
             <div className="text-2xl tracking-widest font-bold px-6">
                 <Link to="/" >{companyInfo.logo}</Link>
             </div>
