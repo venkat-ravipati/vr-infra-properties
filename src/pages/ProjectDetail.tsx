@@ -93,53 +93,53 @@ export default function ProjectDetail() {
                 <div className="absolute bottom-5 left-2 product-detail-text md:left-5 text-white text-4xl md:text-5xl lg:text-7xl">{project.title}</div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 h-full gap-10 p-6 md:p-10 mt-10">
-                <div ref={productDetailRef} className="col-span-1 px-3">
+            <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 h-full gap-2 lg:gap-10 p-6 md:p-10 md:mt-10">
+                <div ref={productDetailRef} className="col-span-1 md:col-span-2 lg:col-span-1 md:px-3">
                     <div className="md:sticky top-10">
-                        <div className="text-3xl detail-list py-7 ">{project.title}</div>
+                        <div className="text-2xl lg:text-3xl detail-list py-3 lg:py-7 ">{project.title}</div>
                         <div className="flex py-2 justify-between detail-list border-b border-gray-300">
-                            <div className="text-gray-600">Location</div>
-                            <div className="text-lg text-gray-600 font-medium">{project.location}</div>
+                            <div className="text-gray-600 text-sm md:text-base">Location</div>
+                            <div className=" lg:text-lg text-gray-600 lg:font-medium">{project.location}</div>
                         </div>
                         <div className="flex justify-between py-2 border-b detail-list border-gray-300">
-                            <div className="text-gray-600">Type</div>
-                            <div className="text-lg text-gray-600 font-medium">{project.type}</div>
+                            <div className="text-gray-600 text-sm md:text-base">Type</div>
+                            <div className="lg:text-lg text-gray-600 lg:font-medium">{project.type}</div>
                         </div>
                         {project.availablePlots && (
                             <div className="flex justify-between py-2 border-b detail-list border-gray-300">
-                                <div className="text-gray-600">Avaliable Plots</div>
-                                <div className="text-lg text-gray-600 font-medium">{project.availablePlots}</div>
+                                <div className="text-gray-600 text-sm md:text-base">Avaliable Plots</div>
+                                <div className="lg:text-lg text-gray-600 lg:font-medium">{project.availablePlots}</div>
                             </div>
                         )}
                         {project.plotSizes && (
                             <div className="flex py-2 justify-between border-b detail-list border-gray-300">
-                                <div className="text-gray-600">sq. ft</div>
-                                <div className="text-lg text-gray-600 font-medium">{project.plotSizes}</div>
+                                <div className="text-gray-600 text-sm md:text-base">sq. ft</div>
+                                <div className="lg:text-lg text-gray-600 lg:font-medium">{project.plotSizes}</div>
                             </div>
                         )}
                         <div className="flex justify-between border-b py-2 detail-list border-gray-300">
-                            <div className="text-gray-600">Status</div>
-                            <div className="text-lg text-gray-600 font-medium">{project.status}</div>
+                            <div className="text-gray-600 text-sm md:text-base">Status</div>
+                            <div className="lg:text-lg text-gray-600 lg:font-medium">{project.status}</div>
                         </div>
 
                         <div className="detail-list">
-                            <button className="cursor-pointer my-4 bg-orange px-5 py-2 flex items-center gap-2 hover:bg-black text-white transition-all duration-300 hover:gap-5" onClick={() => navigate("/projects")}><ArrowLeft size={18} /> All Projects</button>
+                            <button className="cursor-pointer my-4 bg-orange px-4 text-sm lg:text-base md:px-5 py-2 flex items-center gap-2 hover:bg-black text-white transition-all duration-300 hover:gap-5" onClick={() => navigate("/projects")}><ArrowLeft size={18} /> All Projects</button>
                         </div>
 
                     </div>
                 </div>
 
-                <div ref={detailInfoRef} className="col-span-2 px-10">
+                <div ref={detailInfoRef} className="col-span-1 md:col-span-3 lg:col-span-2 md:px-5 lg:px-10">
                     <div>
-                        <div className="text-xl detail-info md:text-3xl">Description</div>
-                        <div className="text-lg detail-info py-4">{project.description}</div>
-                        <div className="text-lg detail-info">{project.body}</div>
+                        <div className="text-xl detail-info md:text-2xl lg:text-3xl">Description</div>
+                        <div className="text-gray-700 md:text-lg detail-info py-4">{project.description}</div>
+                        <div className="text-gray-700 md:text-lg detail-info">{project.body}</div>
                     </div>
 
-                    <div className="my-10">
-                        <div className="text-lg detail-info flex justify-start gap-5 py-2">
-                            <button onClick={() => { setPhaseImg(0) }} className={`py-2 rounded-3xl px-5 cursor-pointer transition-all duration-300 ${phaseImg == 0 ? "bg-black text-white hover:bg-black/90" : "bg-white hover:bg-[#f5f5f5] text-black"}`}>Phase 1</button>
-                            <button onClick={() => { setPhaseImg(1) }} className={`py-2 rounded-3xl px-5 cursor-pointer transition-all duration-300 ${phaseImg == 1 ? "bg-black text-white hover:bg-black/90" : "bg-white hover:bg-[#f5f5f5] text-black"}`}>Phase 2</button>
+                    <div className="my-5 md:my-10">
+                        <div className="md:text-lg detail-info flex justify-start gap-2 md:gap-5 py-2">
+                            <button onClick={() => { setPhaseImg(0) }} className={`py-2 rounded-3xl px-5 cursor-pointer transition-all duration-300 ${phaseImg == 0 ? "bg-black text-white hover:bg-black/90" : "bg-white hover:bg-[#f5f5f5] border text-black"}`}>Phase 1</button>
+                            <button onClick={() => { setPhaseImg(1) }} className={`py-2 rounded-3xl px-5 cursor-pointer transition-all duration-300 ${phaseImg == 1 ? "bg-black text-white hover:bg-black/90" : "bg-white hover:bg-[#f5f5f5] border text-black"}`}>Phase 2</button>
                             {/* <button onClick={() => {setPhaseImg(2)}} className="cursor-pointer">Phase 3</button> */}
                         </div>
                         <div className="detail-info">
@@ -147,23 +147,23 @@ export default function ProjectDetail() {
                         </div>
                     </div>
 
-                    <div className="py-5 my-5 border-b border-gray-300">
-                        <div className="text-2xl py-2 project-highlights">PROJECT HIGHLIGHTS</div>
-                        <div className="grid grid-cols-2 py-5 gap-3 project-highlights">
+                    <div className="py-2 md:py-5 md:my-5 border-b border-gray-300">
+                        <div className="text-xl font-medium md:text-2xl py-2 project-highlights">PROJECT HIGHLIGHTS</div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 py-2 md:py-5 gap-3 project-highlights">
                             {project.projectHighlights.map((projectHighlight, index) => {
                                 return (
-                                    <div key={index} className="flex items-center gap-2"><BadgeCheck size={18} />{projectHighlight}</div>
+                                    <div key={index} className="flex text-sm md:text-base items-center gap-2"><BadgeCheck size={18} />{projectHighlight}</div>
                                 )
                             })}
                         </div>
                     </div>
 
                     <div className="py-5">
-                        <div className="text-2xl py-2 location-highlights">LOCATION HIGHLIGHTS</div>
-                        <div className="grid grid-cols-2 py-5 gap-3 location-highlights">
+                        <div className="text-xl font-medium lg:text-2xl py-2 location-highlights">LOCATION HIGHLIGHTS</div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 py-2 md:py-5 gap-3 location-highlights">
                             {project.locationHighlights.map((locationHighlight, index) => {
                                 return (
-                                    <div key={index} className="flex items-center gap-2"><BadgeCheck size={18} />{locationHighlight}</div>
+                                    <div key={index} className="flex text-sm md:text-base items-center gap-2"><BadgeCheck size={18} />{locationHighlight}</div>
                                 )
                             })}
                         </div>
